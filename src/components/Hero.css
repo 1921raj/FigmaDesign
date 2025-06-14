@@ -1,0 +1,153 @@
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    margin-bottom: 80px;
+}
+
+.title-line {
+    font-size: clamp(3rem, 12vw, 9rem);
+    font-weight: 900;
+    color: white;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.circle-badge {
+    width: clamp(60px, 8vw, 120px);
+    height: clamp(60px, 8vw, 120px);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    position: relative;
+}
+
+.gradient-circle-1 {
+    background: linear-gradient(45deg, #ef4444, #8b5cf6, #06b6d4);
+}
+
+.gradient-circle-1::after {
+    content: '';
+    width: 75%;
+    height: 75%;
+    background: linear-gradient(135deg, #ec4899, #3b82f6);
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.gradient-circle-2 {
+    background: white;
+}
+
+.gradient-circle-2::after {
+    content: '';
+    width: 75%;
+    height: 75%;
+    background: linear-gradient(135deg, #60a5fa, #6b7280);
+    border-radius: 50%;
+    opacity: 0.9;
+}
+
+.bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+.client-logos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.logo-item.bold {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}
+
+.hero-description {
+    color: #d1d5db;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 400px;
+    text-align: right;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .title-line {
+        gap: 10px;
+    }
+
+    .circle-badge {
+        margin: 0 10px;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .client-logos {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .client-logos {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo-item {
+        font-size: 18px;
+    }
+}

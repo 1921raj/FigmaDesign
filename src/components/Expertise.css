@@ -1,0 +1,73 @@
+/* Expertise Section Styles */
+.expertise-section {
+    padding: 100px 40px;
+    background-color: #000000;
+}
+
+.expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.expertise-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.star-icon {
+    color: white;
+    font-size: 24px;
+    opacity: 0.8;
+}
+
+.expertise-title {
+    color: white;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
+}
+
+.expertise-item {
+    max-width: 500px;
+}
+
+.expertise-item-title {
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+}
+
+.expertise-description {
+    color: #a3a3a3;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Mobile Responsiveness for Expertise */
+@media (max-width: 768px) {
+    .expertise-section {
+        padding: 60px 20px;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .expertise-header {
+        margin-bottom: 40px;
+    }
+}
