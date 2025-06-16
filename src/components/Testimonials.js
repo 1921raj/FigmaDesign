@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ScrollingBanner from './ScrollingBanner';
 import './Testimonials.css';
 
 const PortfolioPage = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [expandedFaq, setExpandedFaq] = useState(0);
   
   const testimonials = [
     {
@@ -21,15 +23,13 @@ const PortfolioPage = () => {
     },
     {
       question: "What tools and software do you use for UX design?",
-      answer: ""
+      answer: "I use a variety of tools including Figma for design and prototyping, Adobe Creative Suite for visual design, Sketch for wireframing, and various user testing platforms for gathering feedback and insights."
     },
     {
       question: "How do you measure the success of your UX designs?",
-      answer: ""
+      answer: "I measure success through various metrics including user engagement rates, task completion rates, user satisfaction scores, conversion rates, and qualitative feedback from user interviews and usability testing sessions."
     }
   ];
-
-  const [expandedFaq, setExpandedFaq] = useState(0);
 
   const toggleFaq = (index) => {
     setExpandedFaq(expandedFaq === index ? -1 : index);
@@ -111,20 +111,8 @@ const PortfolioPage = () => {
         </div>
       </div>
 
-      {/* Skills Section */}
-      <div className="section skills-section">
-        <div className="skills-container">
-          <div className="skills-list">
-            <span className="skill-item">LOW</span>
-            <div className="accent-dot"></div>
-            <span className="skill-item">FIGMA</span>
-            <div className="accent-dot"></div>
-            <span className="skill-item">DESIGNER</span>
-            <div className="accent-dot"></div>
-            <span className="skill-item">DEVELO</span>
-          </div>
-        </div>
-      </div>
+      {/* Scrolling Banner Section */}
+      <ScrollingBanner />
 
       {/* Contact Section */}
       <div className="section contact-section">

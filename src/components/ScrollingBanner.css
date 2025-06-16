@@ -1,0 +1,83 @@
+/* ScrollingBanner.css */
+
+.scroll-container {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #000;
+  margin: 2rem 0;
+}
+
+.scroll-text {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+  text-stroke: 2px #fff;
+  text-transform: uppercase;
+}
+
+.star {
+  font-size: 3rem;
+  color: #fff;
+  margin: 0 3rem;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .scroll-container {
+    height: 80px;
+  }
+  
+  .scroll-text {
+    font-size: 2.5rem;
+  }
+  
+  .star {
+    font-size: 2rem;
+    margin: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-container {
+    height: 60px;
+  }
+  
+  .scroll-text {
+    font-size: 1.8rem;
+  }
+  
+  .star {
+    font-size: 1.5rem;
+    margin: 0 1rem;
+  }
+}
