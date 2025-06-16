@@ -3,54 +3,54 @@ import './Navigation.css';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [hireClicked, setHireClicked] = useState(false);
 
   const handleNavClick = (section, e) => {
     e.preventDefault();
+    
+    const sectionMap = {
+      home: 'expertise',
+      about: 'blog',
+      projects: 'works',
+      contact: 'testimonials'
+    };
+
+    const targetId = sectionMap[section];
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80, // Adjust for header height
+        behavior: 'smooth'
+      });
+    }
+
+    // Update URL and active state
+    window.history.pushState(null, '', `#${section}`);
     setActiveSection(section);
-    
-    // Add ripple effect
-    const item = e.target;
-    item.classList.add('ripple');
-    setTimeout(() => {
-      item.classList.remove('ripple');
-    }, 600);
-    
-    console.log(`Navigated to: ${section}`);
   };
 
-  const handleHireClick = () => {
-    setHireClicked(true);
-    setTimeout(() => {
-      setHireClicked(false);
-    }, 200);
-    console.log('Hire Me button clicked!');
+  const handleHireClick = (e) => {
+    e.preventDefault();
+    handleNavClick('contact', e);
   };
 
   return (
     <div className="nav-container">
-      <div className="logo">
-        <div className="logo-text">M.</div>
-      </div>
-      
+      <div className="logo">M.</div>
       <nav className="navbar">
         <div className="nav-links">
           {['home', 'about', 'projects', 'contact'].map((section) => (
             <a
               key={section}
-              href="#"
+              href={`#${section}`}
               className={`nav-item ${activeSection === section ? 'active' : ''}`}
-              data-section={section}
               onClick={(e) => handleNavClick(section, e)}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </a>
           ))}
         </div>
-        <button 
-          className={`hire-btn ${hireClicked ? 'clicked' : ''}`}
-          onClick={handleHireClick}
-        >
+        <button className="hire-btn" onClick={handleHireClick}>
           HIRE ME
         </button>
       </nav>
